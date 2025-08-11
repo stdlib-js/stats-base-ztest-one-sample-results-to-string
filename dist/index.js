@@ -1,5 +1,37 @@
-"use strict";var f=function(e,i){return function(){return i||e((i={exports:{}}).exports,i),i.exports}};var l=f(function(b,d){
-var u=require('@stdlib/assert-is-positive-integer/dist'),g=require('@stdlib/assert-is-plain-object/dist'),h=require('@stdlib/assert-is-boolean/dist').isPrimitive,v=require('@stdlib/assert-has-own-property/dist'),a=require('@stdlib/error-tools-fmtprodmsg/dist');function p(e,i){var o,s,r,t,n,c;if(r=4,o=!0,arguments.length>1){if(!g(i))throw new TypeError(a('2Lz47',i));if(v(i,"digits")){if(!u(i.digits))throw new TypeError(a('2Lz3P',"digits",i.digits));r=i.digits}if(v(i,"decision")){if(!h(i.decision))throw new TypeError(a('2Lz2o',"decision",i.decision));o=i.decision}}switch(e.alternative){case"less":n="less than";break;case"greater":n="greater than";break;case"two-sided":default:n="not equal to";break}return s=(1-e.alpha)*100,c=e.ci,t=["",e.method,"",a("Alternative hypothesis: True mean is %s %0."+r+"f",n,e.nullValue),"",a("    pValue: %0."+r+"f",e.pValue),a("    statistic: %0."+r+"f",e.statistic),a("    %."+r+"f%% confidence interval: [%0."+r+"f, %0."+r+"f]",s,c[0],c[1]),""],o&&(t.push(a("Test Decision: %s null in favor of alternative at %."+r+"f%% significance level",e.rejected?"Reject":"Fail to reject",100-s)),t.push("")),t.join("\n")}d.exports=p
-});var m=l();module.exports=m;
 /** @license Apache-2.0 */
-//# sourceMappingURL=index.js.map
+
+'use strict';
+
+/**
+* Serialize a one-sample Z-test results object as a formatted string.
+*
+* @module @stdlib/stats-base-ztest-one-sample-results-to-string
+*
+* @example
+* var Float64Array = require( '@stdlib/array-float64' );
+* var res2str = require( '@stdlib/stats-base-ztest-one-sample-results-to-string' );
+*
+* var results = {
+*     'rejected': false,
+*     'alpha': 0.05,
+*     'pValue': 0.3364,
+*     'statistic': 11.7586,
+*     'nullValue': 0.0,
+*     'sd': 0.4563,
+*     'ci': new Float64Array( [ 9.9983, 11.4123 ] ),
+*     'alternative': 'two-sided',
+*     'method': 'One-sample Z-test'
+* };
+*
+* var str = res2str( results );
+* // returns <string>
+*/
+
+// MODULES //
+
+var main = require( './main.js' );
+
+
+// EXPORTS //
+
+module.exports = main;
