@@ -138,7 +138,6 @@ The function supports the following options:
 
 ```javascript
 var Float64Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
-var resolveEnum = require( '@stdlib/stats-base-ztest-alternative-resolve-enum' );
 var Float64Array = require( '@stdlib/array-float64' );
 var res2str = require( '@stdlib/stats-base-ztest-one-sample-results-to-string' );
 
@@ -150,7 +149,7 @@ results.statistic = 11.7586;
 results.nullValue = 0.0;
 results.sd = 0.4563;
 results.ci = new Float64Array( [ 9.9983, 11.4123 ] );
-results.alternative = resolveEnum( 'two-sided' );
+results.alternative = 'two-sided';
 
 var s = res2str( results );
 console.log( s );
@@ -223,8 +222,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
